@@ -10,7 +10,9 @@ export default class Dashoboard extends Component{
     render(){
 
         return(
-            <h1>Painel de controle</h1>
+            <div>
+                <h1>Painel de controle</h1>
+            </div>
         );
     }
 }

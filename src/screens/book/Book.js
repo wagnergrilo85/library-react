@@ -1,9 +1,19 @@
 import React,{Component} from 'react';
+import Toolbar from '../../shared/components/Toolbar';
 
 class Book extends Component{
 
     constructor(){
         super();
+
+        this.handleNewFormElement = this.handleNewFormElement.bind(this);
+    }
+
+    handleNewFormElement(){
+
+        console.log('tem que trocar os elementos');
+        document.querySelector('#main-table').style.display = "none";
+
     }
 
     render(){
@@ -11,17 +21,10 @@ class Book extends Component{
         return(
 
             <div>
-
-                <div className="tools">
-                    <div className="container">
-                        <h1>Listando livros</h1>
-                        <a href="#" className="btn btn-info pull-right btnAction"> Novo registro </a>
-                    </div>
-                </div>
+                <Toolbar link = "/new" title = "Livros" textButton="Novo registro" />
 
                 <div className="container" id = "content">
-
-                    <table className="table table-bordered table-hober">
+                    <table className="table table-bordered table-hober" id = "main-table">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -31,11 +34,9 @@ class Book extends Component{
                             </tr>
                         </thead>
                         <tbody>
-
                         </tbody>
                     </table>
                 </div>
-
             </div>
         );
     }
